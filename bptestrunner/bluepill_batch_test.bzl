@@ -50,7 +50,7 @@ def _bluepill_batch_test_impl(ctx):
     substitutions = {
         "test_bundle_paths": " ".join(test_bundle_paths),
         "test_host_paths": " ".join(test_host_paths),
-        "bp_test_plan": test_plan_file.basename,
+        "bp_test_plan": test_plan_file.short_path,
         "bp_path": ctx.executable._bp_exec.short_path,
         "bluepill_path": ctx.executable._bluepill_exec.short_path,
         "target_name": ctx.attr.name,
