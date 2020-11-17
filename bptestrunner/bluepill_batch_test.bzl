@@ -56,10 +56,10 @@ def _bluepill_batch_test_impl(ctx):
         "target_name": ctx.attr.name,
     }
     if ctx.attr.config_file:
-        runfiles += [ctx.file.config_file]
+        runfiles.append(ctx.file.config_file)
         substitutions["bp_config_file"] = ctx.file.config_file.path
     if ctx.attr.time_estimates:
-        runfiles += [ctx.file.time_estimates]
+        runfiles.append(ctx.file.time_estimates)
         substitutions["bp_test_time_estimates_json"] = ctx.file.time_estimates.path
     ctx.actions.expand_template(
         template = ctx.file._test_runner_template,
